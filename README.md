@@ -38,7 +38,7 @@ npm start
 Cela ouvrira l'application dans votre navigateur à l'adresse 'http://localhost:4200'.
 
 
-🎮 Comment jouer
+## 🎮 Comment jouer
 Cliquez sur le bouton "Commencer" pour démarrer le jeu.
 Une séquence de couleurs s'affiche pendant 15 secondes.
 Reproduisez la séquence en cliquant sur les couleurs dans le bon ordre.
@@ -46,5 +46,5 @@ Cliquez sur "Valider" pour soumettre votre réponse ou "Réinitialiser" pour rec
 À chaque niveau réussi, une nouvelle couleur est ajoutée à la séquence.
 
 
-📄 License
+## 📄 License
 Ce projet est sous MIT License - voir le fichier LICENSE pour plus de détails.
