@@ -1,0 +1,31 @@
+/* Container Styling */
+.start-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+  background-size: 400% 400%;
+  animation: nightSkyAnimation 10s ease infinite;
+}
+
+/* Start Button */
+.start-button {
+  padding: 20px 50px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(45deg, #a8dadc, #457b9d, #1d3557);
+  border: none;
+  border-radius: 30px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  transition: all 0.4s ease;
+}
+
+.start-button:hover {
+  transform: scale(1.2);
+  background: linear-gradient(45deg, #1d3557, #457b9d, #a8dadc);
+  box-shadow: 0 6px 30px rgba(255, 255, 255, 0.6);
+}
