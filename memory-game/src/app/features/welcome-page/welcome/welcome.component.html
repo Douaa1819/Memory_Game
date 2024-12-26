@@ -1,0 +1,33 @@
+<!-- memory-game.component.html -->
+<main class="min-h-screen font-['Poppins'] bg-gradient-to-b from-[#000814] via-[#001d3d] to-[#003566] bg-[length:400%_400%] animate-[gradient_12s_ease_infinite]">
+  <div class="min-h-screen flex items-center justify-center p-4">
+    <section class="text-center p-8 md:p-12 bg-black/20 backdrop-blur-sm rounded-2xl
+       ">
+
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 uppercase tracking-wider
+        drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] drop-shadow-[0_0_40px_rgba(0,121,255,0.6)]">
+        Ultimate Memory Game
+      </h1>
+
+      <p class="text-lg md:text-xl lg:text-2xl text-[#a3cef1] mb-12
+        drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
+        Step into the challenge and test your memory skills!
+      </p>
+
+      <button
+        (click)="startGame()"
+        class="px-8 py-4 text-xl font-bold text-white
+          bg-gradient-to-r from-[#001d3d] via-[#003566] to-[#00509d]
+          rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.8)]
+          transition-all duration-500
+          hover:scale-110
+          hover:shadow-[0_6px_30px_rgba(255,255,255,0.6)]
+          hover:bg-gradient-to-r hover:from-[#00509d] hover:via-[#003566] hover:to-[#001d3d]
+          focus:outline-none focus:ring-4 focus:ring-blue-400">
+        Start Game
+      </button>
+    </section>
+  </div>
+</main>
+
+
