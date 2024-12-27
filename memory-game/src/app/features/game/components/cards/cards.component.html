@@ -1,1 +1,20 @@
-<p>cards works!</p>
+<div class="game-container flex flex-col items-center p-4">
+  <div class="cards-grid grid grid-cols-4 gap-4">
+    <div
+      *ngFor="let card of shuffledSequence"
+      class="card-wrapper relative"
+      [class.opacity-50]="isPlaying">
+      <button
+        [@cardAnimation]="cardStates[card.order] || 'inactive'"
+        [style.backgroundColor]="card.colorHex"
+        (click)="onCardClick(card)"
+        [disabled]="isPlaying"
+        class="memory-card w-24 h-32 flex items-center justify-center rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+        [class.selected]="playerSequence.playerSequence.includes(card)">
+        <span class="card-order text-white text-lg font-bold">{{ card.order }}</span>
+      </button>
+    </div>
+  </div>
+
+
+</div>

@@ -1,1 +1,46 @@
-<p>result works!</p>
+<div class="result-container">
+  <div class="game-over-header">
+    <h1>Game Over!</h1>
+    <p class="player-name"> Results</p>
+  </div>
+
+  <div class="result-stats">
+    <div class="stat-box">
+      <span class="label">Final Score</span>
+      <span class="value">{{ currentResult.score }}</span>
+    </div>
+    <div class="stat-box">
+      <span class="label">Level Reached</span>
+      <span class="value">{{ currentResult.level }}</span>
+    </div>
+  </div>
+
+  <div class="sequence-comparison">
+    <div class="sequence-box">
+      <h3>Your Sequence</h3>
+      <div class="sequence-display">
+        <div *ngFor="let card of currentResult.sequenceChosen"
+             class="sequence-card"
+             [style.backgroundColor]="card.colorHex">
+          {{ card.order }}
+        </div>
+      </div>
+    </div>
+
+    <div class="sequence-box">
+      <h3>Correct Sequence</h3>
+      <div class="sequence-display">
+        <div *ngFor="let card of currentResult.sequenceCorrect"
+             class="sequence-card"
+             [style.backgroundColor]="card.colorHex">
+          {{ card.order }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="action-buttons">
+    <button (click)="playAgain()" class="play-again">Play Again</button>
+    <button (click)="exitGame()" class="exit">Exit Game</button>
+  </div>
+</div>

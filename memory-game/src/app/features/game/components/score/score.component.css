@@ -1,0 +1,14 @@
+.score-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  gap: 2rem;
+  font-size: 1.2rem;
+  color: white;
+}
+.number {
+  font-weight: bold;
+  color: #FFD700;
+  margin-left: 0.5rem;
+}
