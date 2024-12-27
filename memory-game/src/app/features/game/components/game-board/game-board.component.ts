@@ -116,6 +116,7 @@ export class GameBoardComponent implements OnInit {
 
 
   resetGame(): void {
+    this.gameMessage = '';
     this.startNewGame();
   }
 
