@@ -8,7 +8,7 @@ import { ScoreComponent } from '../score/score.component';
 import { Sequence } from '../../types/sequence';
 import { Result } from '../../types/result';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game-board',
@@ -42,7 +42,8 @@ export class GameBoardComponent implements OnInit {
   constructor(
     private gameService: GameService,
     private scoreService: ScoreService,
-    private resultService: ResultService
+    private resultService: ResultService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -77,6 +78,9 @@ export class GameBoardComponent implements OnInit {
     }, 1000);
   }
 
+  goToResults(): void {
+    this.router.navigate(['/results']);
+  }
 
   startNewLevel(): void {
     this.startTimer();
@@ -124,7 +128,6 @@ export class GameBoardComponent implements OnInit {
     this.level++;
     const points = this.scoreService.calculateScore(answer.timeRemaining);
     this.currentScore += points;
-    // this.updateGameMessage(this.getSuccessMessage());
     this.startNewLevel();
   }
 
@@ -139,6 +142,7 @@ export class GameBoardComponent implements OnInit {
       sequenceChosen: answer.playerSequence,
       sequenceCorrect: this.sequence
     };
+    console.log('Setting result:', result);
     this.resultService.setResult(result);
   }
 

@@ -1,46 +1,59 @@
-<div class="result-container">
-  <div class="game-over-header">
-    <h1>Game Over!</h1>
-    <p class="player-name"> Results</p>
+<div class="result-container min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-[#000814] via-[#001d3d] to-[#003566] text-white p-8">
+  <header class="mb-8 text-center">
+    <h1 class="text-4xl font-bold">Game Over!</h1>
+    <p class="text-lg">Results for <span class="text-yellow-300">player</span></p>
+  </header>
+
+  <!-- Stats Section -->
+  <div class="mb-8 bg-gradient-to-r from-gray-800 to-gray-600 p-6 rounded-lg shadow-lg w-full max-w-2xl">
+    <p class="text-2xl font-bold mb-4">Final Score: <span class="text-yellow-300">{{ currentResult.score }}</span></p>
+    <p class="text-xl font-bold">Level Reached: <span class="text-yellow-300">{{ currentResult.level }}</span></p>
   </div>
 
-  <div class="result-stats">
-    <div class="stat-box">
-      <span class="label">Final Score</span>
-      <span class="value">{{ currentResult.score }}</span>
-    </div>
-    <div class="stat-box">
-      <span class="label">Level Reached</span>
-      <span class="value">{{ currentResult.level }}</span>
-    </div>
-  </div>
-
-  <div class="sequence-comparison">
-    <div class="sequence-box">
-      <h3>Your Sequence</h3>
-      <div class="sequence-display">
-        <div *ngFor="let card of currentResult.sequenceChosen"
-             class="sequence-card"
-             [style.backgroundColor]="card.colorHex">
-          {{ card.order }}
+  <!-- Sequence Comparison -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+    <!-- Sequence Chosen -->
+    <div class="bg-red-600 p-6 rounded-lg shadow-lg">
+      <h3 class="text-lg font-bold mb-4 text-center">Your Sequence</h3>
+      <div class="grid grid-cols-4 gap-4">
+        <div
+          *ngFor="let card of currentResult.sequenceChosen"
+          class="w-16 h-16 rounded-lg flex items-center justify-center"
+          [style.backgroundColor]="card.colorHex"
+        >
+          <span class="text-white font-medium">{{ card.order }}</span>
         </div>
       </div>
     </div>
 
-    <div class="sequence-box">
-      <h3>Correct Sequence</h3>
-      <div class="sequence-display">
-        <div *ngFor="let card of currentResult.sequenceCorrect"
-             class="sequence-card"
-             [style.backgroundColor]="card.colorHex">
-          {{ card.order }}
+    <!-- Sequence Correct -->
+    <div class="bg-green-600 p-6 rounded-lg shadow-lg">
+      <h3 class="text-lg font-bold mb-4 text-center">Correct Sequence</h3>
+      <div class="grid grid-cols-4 gap-4">
+        <div
+          *ngFor="let card of currentResult.sequenceCorrect"
+          class="w-16 h-16 rounded-lg flex items-center justify-center"
+          [style.backgroundColor]="card.colorHex"
+        >
+          <span class="text-white font-medium">{{ card.order }}</span>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="action-buttons">
-    <button (click)="playAgain()" class="play-again">Play Again</button>
-    <button (click)="exitGame()" class="exit">Exit Game</button>
+  <!-- Action Buttons -->
+  <div class="flex gap-6 mt-8">
+    <button
+      (click)="playAgain()"
+      class="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition duration-300"
+    >
+      Play Again
+    </button>
+    <button
+      (click)="exitGame()"
+      class="px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-500 transition duration-300"
+    >
+      Exit Game
+    </button>
   </div>
 </div>

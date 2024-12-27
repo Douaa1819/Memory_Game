@@ -22,6 +22,11 @@ export class ResultService {
     return [...this.results];
   }
 
+  addResult(result: Result) {
+    console.log('Adding result:', result);
+    this.results.push(result);
+  }
+
   clearResults() {
     this.results = [];
     this.currentResult = null;

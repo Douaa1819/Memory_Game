@@ -1,16 +1,13 @@
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ResultService } from '../../service/result/result.service';
 import { Router } from '@angular/router';
 import { Result } from '../../types/result';
 
-
 @Component({
   selector: 'app-result',
   standalone: false,
-
   templateUrl: './result.component.html',
-  styleUrls: ['./result.component.css']
+  styleUrls: ['./result.component.css'],
 })
 export class ResultComponent implements OnInit {
   currentResult!: Result;
@@ -21,7 +18,9 @@ export class ResultComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    console.log('Navigating to ResultComponent');
     this.currentResult = this.resultService.getCurrentResult();
+    console.log('Current Result:', this.currentResult);
     if (!this.currentResult) {
       this.router.navigate(['/']);
     }
@@ -37,5 +36,3 @@ export class ResultComponent implements OnInit {
     this.router.navigate(['/']);
   }
 }
-
-
